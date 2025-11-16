@@ -7,9 +7,9 @@ Complete brand identity system for Level Play Digital. This brand kit contains a
 ### 01-logos/
 Complete logo system including:
 - **Primary**: Gradient logo (main brand logo)
-- **Solid Versions**: Black, white, cyan, orange, rich-black, two-color
-- **Animated**: Gradient shift, fade-in, glow pulse animations
-- **Variations**: Horizontal, stacked, icon-only, wordmark-only
+- **Solid Versions**: Black, white, cyan, orange, navy blue, rich-black, two-color (cyan-orange, navy-orange)
+- **Animated**: Gradient shift, fade-in, glow pulse, brand colors shift animations
+- **Variations**: Horizontal, icon-only, compact versions (horizontal, stacked, icon, wordmark)
 - **Backgrounds**: Context examples on different backgrounds
 
 ### 02-favicons/
@@ -27,32 +27,33 @@ Brand color system:
 
 ### 04-typography/
 Typography guidelines:
-- Font families and pairings
-- Type scale and sizing
-- Usage guidelines
+- `typography-guide.md` - Complete typography documentation
+- `type-scale.css` - CSS type scale system
+- `brand-voice-guide.md` - Brand voice and tone guidelines
 
 ### 05-web-assets/
 Web-specific assets:
-- Open Graph images
+- Open Graph image generators and variations (including glassmorphism designs)
 - Twitter card images
-- Email signature template
-- CSS variables file
+- CSS variables file (`brand-css-variables.css`)
 
 ### 06-print-assets/
 Print-ready templates:
-- Business card templates
+- Business card templates (front and back)
 - Letterhead template
 - Print specifications
 
 ### 07-templates/
 Ready-to-use templates:
 - Email signature (HTML)
-- Social media templates
+- Social media templates:
+  - Coming soon pages (standard and animated glass versions)
+  - Social media cover photos
 - Presentation templates
 
 ### 08-documentation/
 Complete documentation:
-- Brand guidelines
+- Brand guidelines (`BRAND_GUIDELINES.md`)
 - Logo usage guide
 - Quick reference
 - Changelog
@@ -62,6 +63,7 @@ Complete documentation:
 ### Primary Colors
 - **Cyan Blue**: `#00BFFF` (HSL: `193, 100%, 50%`)
 - **Coral Orange**: `#FF6633` (HSL: `14, 100%, 60%`)
+- **Navy Blue**: `#005792` (Additional brand color)
 
 ### Brand Gradient
 - **CSS**: `linear-gradient(135deg, #00BFFF 0%, #FF6633 100%)`
@@ -90,21 +92,30 @@ Complete documentation:
 - Print materials (use rich-black for professional print)
 - Monochrome designs
 - Reverse applications (white on dark)
+- Navy blue version available for professional contexts
 
 **Icon Only**
 - Favicons
 - App icons
 - Small spaces (minimum 48×48px)
 - Social media profile pictures
+- Available in: gradient, cyan, orange, navy, white, black
 
-**Wordmark Only**
-- Text-only applications
-- Simplified branding
-- When symbol doesn't fit
+**Compact Versions**
+- Space-constrained applications
+- Mobile interfaces
+- Small headers
+- Available as: horizontal, stacked, icon-only, wordmark-only
+
+**Two-Color Versions**
+- Cyan-orange combination
+- Navy-orange combination
+- Professional print applications
 
 ### Minimum Sizes
 - Primary Logo: 120px width minimum
 - Icon Only: 48×48px minimum
+- Compact Logos: 200px width minimum
 - Wordmark: 200px width minimum
 
 ### Clear Space
@@ -116,7 +127,7 @@ Maintain clear space equal to the height of the "L" in "LEVEL" on all sides of t
 
 ```html
 <!-- SVG Logo (Recommended) -->
-<img src="01-logos/primary/level-play-digital-logo-gradient-full.svg" 
+<img src="level-play-digital-brand-kit/01-logos/primary/level-play-digital-logo-gradient-full.svg" 
      alt="Level Play Digital" 
      width="300">
 ```
@@ -125,7 +136,7 @@ Maintain clear space equal to the height of the "L" in "LEVEL" on all sides of t
 
 ```html
 <!-- Include CSS file -->
-<link rel="stylesheet" href="03-colors/brand-colors.css">
+<link rel="stylesheet" href="level-play-digital-brand-kit/03-colors/brand-colors.css">
 
 <!-- Use in your CSS -->
 .my-element {
@@ -138,28 +149,29 @@ Maintain clear space equal to the height of the "L" in "LEVEL" on all sides of t
 
 ```html
 <!-- Standard Favicons -->
-<link rel="icon" type="image/x-icon" href="02-favicons/favicon.ico">
-<link rel="icon" type="image/png" sizes="32x32" href="02-favicons/level-play-digital-favicon-32x32.png">
+<link rel="icon" type="image/x-icon" href="level-play-digital-brand-kit/02-favicons/level-play-digital-favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="level-play-digital-brand-kit/02-favicons/level-play-digital-favicon-32x32.png">
 
 <!-- Apple Touch Icon -->
-<link rel="apple-touch-icon" sizes="180x180" href="02-favicons/level-play-digital-favicon-180x180-apple-touch-icon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="level-play-digital-brand-kit/02-favicons/level-play-digital-favicon-180x180-apple-touch-icon.png">
 
 <!-- Android Chrome -->
-<link rel="icon" type="image/png" sizes="192x192" href="02-favicons/level-play-digital-favicon-192x192-android-chrome.png">
-<link rel="icon" type="image/png" sizes="512x512" href="02-favicons/level-play-digital-favicon-512x512-android-chrome.png">
+<link rel="icon" type="image/png" sizes="192x192" href="level-play-digital-brand-kit/02-favicons/level-play-digital-favicon-192x192-android-chrome.png">
+<link rel="icon" type="image/png" sizes="512x512" href="level-play-digital-brand-kit/02-favicons/level-play-digital-favicon-512x512-android-chrome.png">
 
 <!-- Web Manifest -->
-<link rel="manifest" href="02-favicons/site.webmanifest">
+<link rel="manifest" href="level-play-digital-brand-kit/02-favicons/site.webmanifest">
 ```
 
 ## 📋 Brand Guidelines
 
 ### Do's
-- ✅ Use exact HEX color values (#00BFFF, #FF6633)
+- ✅ Use exact HEX color values (#00BFFF, #FF6633, #005792)
 - ✅ Maintain 135deg gradient direction
 - ✅ Use appropriate logo version for context
 - ✅ Maintain minimum sizes and clear space
 - ✅ Use SVG format when possible for scalability
+- ✅ Follow brand voice guidelines for all communications
 
 ### Don'ts
 - ❌ Never modify gradient direction
@@ -167,20 +179,30 @@ Maintain clear space equal to the height of the "L" in "LEVEL" on all sides of t
 - ❌ Never stretch or distort logos
 - ❌ Never use gradient on small text
 - ❌ Never modify logo proportions
+- ❌ Never use outdated logo versions
 
 ## 🎯 Showcase Pages
 
 Interactive showcase pages are available to preview all brand assets:
 
 - **logo-showcase.html** - View all logo variations
-- **color-palette-showcase.html** - Explore color system
-- **favicon-showcase.html** - See all favicon sizes
-- **typography-showcase.html** - Typography examples
-- **web-assets-showcase.html** - Web asset previews
+- **og-image-generator.html** - Preview Open Graph images
+- **og-image-glassmorphism-variations.html** - Glassmorphism OG image designs
+- **og-image-variations.html** - Additional OG image variations
+- **social-media-covers.html** - Social media cover photo templates
+- **coming-soon-social.html** - Coming soon page template
+- **coming-soon-animated-glass.html** - Animated coming soon page
+
+## 📦 Repository
+
+This brand kit is hosted on GitHub:
+- **Repository**: [github.com/steemer473/lpd-brandkit](https://github.com/steemer473/lpd-brandkit)
+- **Status**: Private repository
+- **Latest Version**: 1.0
 
 ## 📞 Support
 
-For questions about brand usage or to request additional assets, please refer to the documentation in the `08-documentation/` folder or contact the brand team.
+For questions about brand usage or to request additional assets, please refer to the documentation in the `level-play-digital-brand-kit/08-documentation/` folder or contact the brand team.
 
 ## 📄 License
 
