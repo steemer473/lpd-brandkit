@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Glassmorphism Variations - Level Play Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8f9fa;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1800px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+            font-size: 2.5em;
+        }
+        
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(650px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .preview-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .preview-title {
+            font-size: 1.3em;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+        
+        .og-preview {
+            width: 100%;
+            height: 0;
+            padding-bottom: 52.5%; /* 1200x630 aspect ratio */
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            background: #fff;
+        }
+        
+        .og-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            color: white;
+        }
+        
+        /* Glassmorphism base styles */
+        .glass-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+        }
+        
+        .glass-icon {
+            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            border-radius: 50%;
+            padding: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .icon-logo {
+            width: 180px;
+            height: 180px;
+        }
+        
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .headline {
+            display: none;
+        }
+        
+        .subheadline {
+            display: none;
+        }
+        
+        .icon-logo {
+            width: 180px;
+            height: 180px;
+        }
+        
+        /* Variation 1: Gradient Background + Solid Icon */
+        .variation-1 {
+            background: linear-gradient(135deg, #00BFFF 0%, #FF6633 50%, #005792 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .variation-1::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .variation-1 .icon-container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .variation-1 .icon-logo {
+            /* White icon - no filter needed */
+            filter: none;
+        }
+        
+        .variation-1 .glass-card {
+            display: none;
+        }
+        
+        /* Variation 2: Navy Background + Gradient Icon */
+        .variation-2 {
+            background: linear-gradient(135deg, #005792 0%, #1a1a2e 100%);
+        }
+        
+        .variation-2 .glass-icon {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.3) 0%, rgba(255, 102, 51, 0.3) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+        }
+        
+        .variation-2 .glass-card {
+            display: none;
+        }
+        
+        /* Variation 3: Rich Multi-Color Gradient + Solid Icon */
+        .variation-3 {
+            background: linear-gradient(135deg, #00BFFF 0%, #005792 25%, #FF6633 50%, #00BFFF 75%, #005792 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .variation-3 .icon-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .variation-3 .glass-square {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .variation-3 .icon-logo {
+            filter: drop-shadow(0 4px 12px rgba(0, 0, 0, 0.3));
+        }
+        
+        .variation-3 .glass-card {
+            display: none;
+        }
+        
+        /* Variation 4: Navy Gradient + Gradient Icon in Glass */
+        .variation-4 {
+            background: linear-gradient(135deg, #005792 0%, #1a1a2e 50%, #005792 100%);
+        }
+        
+        .variation-4 .glass-icon {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.25) 0%, rgba(255, 102, 51, 0.25) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            box-shadow: 0 0 40px rgba(0, 191, 255, 0.3), 0 0 40px rgba(255, 102, 51, 0.3);
+        }
+        
+        .variation-4 .icon-logo {
+            filter: drop-shadow(0 0 20px rgba(0, 191, 255, 0.8)) drop-shadow(0 0 20px rgba(255, 102, 51, 0.8));
+        }
+        
+        .variation-4 .glass-card {
+            display: none;
+        }
+        
+        /* Variation 5: Rich Purple-Blue-Orange Gradient + Solid Icon */
+        .variation-5 {
+            background: linear-gradient(135deg, #005792 0%, #00BFFF 33%, #FF6633 66%, #005792 100%);
+            background-size: 300% 300%;
+            animation: richGradient 10s ease infinite;
+        }
+        
+        @keyframes richGradient {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        
+        .variation-5 .icon-container {
+            position: relative;
+            z-index: 2;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .variation-5 .glass-square {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 20px;
+            padding: 40px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+        }
+        
+        .variation-5 .icon-logo {
+            filter: drop-shadow(0 4px 20px rgba(0, 87, 146, 0.6));
+        }
+        
+        .variation-5 .glass-card {
+            display: none;
+        }
+        
+        /* Variation 6: Animated Rich Gradient + Glass Icon */
+        .variation-6 {
+            background: linear-gradient(135deg, #00BFFF 0%, #005792 25%, #FF6633 50%, #00BFFF 75%, #005792 100%);
+            background-size: 200% 200%;
+            animation: gradientShift 8s ease infinite;
+        }
+        
+        .variation-6 .glass-icon {
+            background: linear-gradient(135deg, rgba(0, 191, 255, 0.3) 0%, rgba(255, 102, 51, 0.3) 100%);
+            border: 2px solid rgba(255, 255, 255, 0.5);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .variation-6 .glass-card {
+            display: none;
+        }
+        
+        .info-text {
+            margin-top: 15px;
+            color: #6c757d;
+            font-size: 0.9em;
+            line-height: 1.6;
+        }
+        
+        .info-text strong {
+            color: #1a1a2e;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OG Image Glassmorphism Variations - Icon & Logo</h1>
+        
+        <div class="preview-grid">
+            <!-- Variation 1: Gradient Background + Solid White Icon -->
+            <div class="preview-card">
+                <h3 class="preview-title">Variation 1: Rich Gradient Background + Solid White Icon</h3>
+                <div class="og-preview">
+                    <div class="og-content variation-1">
+                        <div class="icon-container">
+                            <img src="../01-logos/variations/level-play-digital-logo-icon-only-white.svg" alt="Level Play Digital Icon" class="icon-logo">
+                        </div>
+                    </div>
+                </div>
+                <p class="info-text">
+                    <strong>Style:</strong> Rich multi-color gradient background<br>
+                    <strong>Icon:</strong> Solid white icon<br>
+                    <strong>File:</strong> og-image-glass-1.png
+                </p>
+            </div>
+            
+            <!-- Variation 2: Navy Background + Gradient Glass Icon -->
+            <div class="preview-card">
+                <h3 class="preview-title">Variation 2: Navy Background + Gradient Glass Icon</h3>
+                <div class="og-preview">
+                    <div class="og-content variation-2">
+                        <div class="glass-icon">
+                            <img src="../01-logos/variations/level-play-digital-logo-icon-only.svg" alt="Level Play Digital Icon" class="icon-logo">
+                        </div>
+                    </div>
+                </div>
+                <p class="info-text">
+                    <strong>Style:</strong> Navy gradient background with gradient glass icon<br>
+                    <strong>Icon:</strong> Gradient icon in glassmorphic container<br>
+                    <strong>File:</strong> og-image-glass-2.png
+                </p>
+            </div>
+            
+            <!-- Variation 3: Animated Gradient + Solid Cyan Icon -->
+            <div class="preview-card">
+                <h3 class="preview-title">Variation 3: Animated Rich Gradient + Solid Cyan Icon</h3>
+                <div class="og-preview">
+                    <div class="og-content variation-3">
+                        <div class="icon-container">
+                            <div class="glass-square">
+                                <img src="../01-logos/variations/level-play-digital-logo-icon-only-cyan.svg" alt="Level Play Digital Icon" class="icon-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="info-text">
+                    <strong>Style:</strong> Animated gradient background<br>
+                    <strong>Icon:</strong> Solid cyan icon<br>
+                    <strong>File:</strong> og-image-glass-3.png
+                </p>
+            </div>
+            
+            <!-- Variation 4: Navy Gradient + Dual-Glow Gradient Icon -->
+            <div class="preview-card">
+                <h3 class="preview-title">Variation 4: Navy Gradient + Dual-Glow Gradient Icon</h3>
+                <div class="og-preview">
+                    <div class="og-content variation-4">
+                        <div class="glass-icon">
+                            <img src="../01-logos/variations/level-play-digital-logo-icon-only.svg" alt="Level Play Digital Icon" class="icon-logo">
+                        </div>
+                    </div>
+                </div>
+                <p class="info-text">
+                    <strong>Style:</strong> Navy gradient with dual-color glow effects<br>
+                    <strong>Icon:</strong> Gradient icon with cyan/orange glow<br>
+                    <strong>File:</strong> og-image-glass-4.png
+                </p>
+            </div>
+            
+            <!-- Variation 5: Rich Multi-Color Gradient + Solid Navy Icon -->
+            <div class="preview-card">
+                <h3 class="preview-title">Variation 5: Rich Multi-Color Gradient + Solid Navy Icon</h3>
+                <div class="og-preview">
+                    <div class="og-content variation-5">
+                        <div class="icon-container">
+                            <div class="glass-square">
+                                <img src="../01-logos/variations/level-play-digital-logo-icon-only-navy.svg" alt="Level Play Digital Icon" class="icon-logo">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <p class="info-text">
+                    <strong>Style:</strong> Rich animated multi-color gradient<br>
+                    <strong>Icon:</strong> Solid navy blue icon in glassmorphism square<br>
+                    <strong>File:</strong> og-image-glass-5.png
+                </p>
+            </div>
+            
+            <!-- Variation 6: Animated Rich Gradient + Glass Icon -->
+            <div class="preview-card">
+                <h3 class="preview-title">Variation 6: Animated Rich Gradient + Glass Icon</h3>
+                <div class="og-preview">
+                    <div class="og-content variation-6">
+                        <div class="glass-icon">
+                            <img src="../01-logos/variations/level-play-digital-logo-icon-only.svg" alt="Level Play Digital Icon" class="icon-logo">
+                        </div>
+                    </div>
+                </div>
+                <p class="info-text">
+                    <strong>Style:</strong> Animated rich gradient background<br>
+                    <strong>Icon:</strong> Gradient icon in glassmorphic container<br>
+                    <strong>File:</strong> og-image-glass-6.png
+                </p>
+            </div>
+        </div>
+        
+        <div style="background: #e9ecef; border-radius: 8px; padding: 30px; margin-top: 40px;">
+            <h2 style="color: #1a1a2e; margin-bottom: 20px;">Design Features</h2>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
+                <div>
+                    <h3 style="color: #005792; margin-bottom: 10px;">Glassmorphism Effects</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: #1a1a2e;">
+                        <li>Backdrop blur (15-30px)</li>
+                        <li>Transparent backgrounds</li>
+                        <li>Subtle borders</li>
+                        <li>Layered depth</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #005792; margin-bottom: 10px;">Rich Gradients</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: #1a1a2e;">
+                        <li>Multi-color gradients</li>
+                        <li>Animated gradient shifts</li>
+                        <li>Radial overlays</li>
+                        <li>Brand color combinations</li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 style="color: #005792; margin-bottom: 10px;">Icon Treatments</h3>
+                    <ul style="margin-left: 20px; line-height: 1.8; color: #1a1a2e;">
+                        <li>Solid white on gradients</li>
+                        <li>Gradient icons in glass</li>
+                        <li>Glow effects</li>
+                        <li>Dual-color shadows</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3 style="margin-top: 30px; margin-bottom: 15px; color: #1a1a2e;">Best Practices Applied</h3>
+            <ul style="margin-left: 20px; line-height: 1.8; color: #1a1a2e;">
+                <li><strong>1200x630px:</strong> Optimal OG image dimensions</li>
+                <li><strong>Readable Text:</strong> Large headlines (2.4em), high contrast</li>
+                <li><strong>Brand Consistency:</strong> Navy blue, gradient colors, icon-only logo</li>
+                <li><strong>Visual Hierarchy:</strong> Icon prominence, clear messaging</li>
+                <li><strong>Modern Design:</strong> Glassmorphism, rich gradients, professional aesthetic</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+

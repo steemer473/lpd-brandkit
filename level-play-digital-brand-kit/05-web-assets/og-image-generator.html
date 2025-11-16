@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Generator - Level Play Digital</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8f9fa;
+            padding: 40px 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+        
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(600px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .preview-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .preview-title {
+            font-size: 1.5em;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .og-preview {
+            width: 100%;
+            height: 0;
+            padding-bottom: 52.5%; /* 1200x630 aspect ratio */
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .og-preview-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #00BFFF 0%, #FF6633 100%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 60px;
+            color: white;
+        }
+        
+        .og-logo {
+            width: 60%;
+            max-width: 400px;
+            margin-bottom: 30px;
+        }
+        
+        .og-text {
+            text-align: center;
+        }
+        
+        .og-text h2 {
+            font-size: 2.5em;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+        }
+        
+        .og-text p {
+            font-size: 1.25em;
+            opacity: 0.95;
+        }
+        
+        .twitter-preview {
+            padding-bottom: 56.25%; /* 1200x675 aspect ratio */
+        }
+        
+        .instructions {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .instructions h2 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .instructions code {
+            background: #1a1a2e;
+            color: #00BFFF;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Open Graph & Twitter Card Image Generator</h1>
+        
+        <div class="preview-grid">
+            <!-- Default OG Image -->
+            <div class="preview-card">
+                <h3 class="preview-title">Default OG Image (1200x630px)</h3>
+                <div class="og-preview">
+                    <div class="og-preview-content">
+                        <img src="../01-logos/primary/level-play-digital-logo-gradient-full.svg" alt="Level Play Digital Logo" class="og-logo">
+                        <div class="og-text">
+                            <h2>Level Play Digital</h2>
+                            <p>Innovative Digital Solutions</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: #6c757d;">
+                    <strong>Dimensions:</strong> 1200x630px<br>
+                    <strong>Use case:</strong> Default social media sharing image<br>
+                    <strong>File:</strong> og-image-default.png
+                </p>
+            </div>
+            
+            <!-- Homepage OG Image -->
+            <div class="preview-card">
+                <h3 class="preview-title">Homepage OG Image (1200x630px)</h3>
+                <div class="og-preview">
+                    <div class="og-preview-content">
+                        <img src="../01-logos/primary/level-play-digital-logo-gradient-full.svg" alt="Level Play Digital Logo" class="og-logo">
+                        <div class="og-text">
+                            <h2>Transform Your Digital Presence</h2>
+                            <p>Partner with Level Play Digital</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: #6c757d;">
+                    <strong>Dimensions:</strong> 1200x630px<br>
+                    <strong>Use case:</strong> Homepage social sharing<br>
+                    <strong>File:</strong> og-image-homepage.png
+                </p>
+            </div>
+            
+            <!-- Twitter Card -->
+            <div class="preview-card">
+                <h3 class="preview-title">Twitter Card (1200x675px)</h3>
+                <div class="og-preview twitter-preview">
+                    <div class="og-preview-content">
+                        <img src="../01-logos/primary/level-play-digital-logo-gradient-full.svg" alt="Level Play Digital Logo" class="og-logo">
+                        <div class="og-text">
+                            <h2>Level Play Digital</h2>
+                            <p>Driving Digital Innovation</p>
+                        </div>
+                    </div>
+                </div>
+                <p style="margin-top: 15px; color: #6c757d;">
+                    <strong>Dimensions:</strong> 1200x675px<br>
+                    <strong>Use case:</strong> Twitter/X card image<br>
+                    <strong>File:</strong> twitter-card.png
+                </p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Generate PNG Files</h2>
+            <p style="margin-bottom: 15px;">To generate the PNG files from these previews:</p>
+            
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Method 1: Browser Screenshot</h3>
+            <ol>
+                <li>Open this HTML file in a browser</li>
+                <li>Right-click on each preview container</li>
+                <li>Select "Inspect Element" or use browser DevTools</li>
+                <li>Take a screenshot of each preview container at the exact dimensions</li>
+                <li>Save as PNG files with the specified names</li>
+            </ol>
+            
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Method 2: Using ImageMagick</h3>
+            <p>Create a script that renders these HTML previews to PNG using headless browser tools like Puppeteer or Playwright.</p>
+            
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Method 3: Design Software</h3>
+            <ol>
+                <li>Create new document at specified dimensions</li>
+                <li>Apply brand gradient background</li>
+                <li>Place logo SVG</li>
+                <li>Add text with brand typography</li>
+                <li>Export as PNG</li>
+            </ol>
+        </div>
+    </div>
+</body>
+</html>
+

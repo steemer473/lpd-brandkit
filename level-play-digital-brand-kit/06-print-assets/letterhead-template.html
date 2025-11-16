@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Letterhead Template - Level Play Digital</title>
+    <style>
+        @page {
+            size: 8.5in 11in;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 8.5in;
+            height: 11in;
+            background: #ffffff;
+            font-family: Georgia, "Times New Roman", serif;
+            padding: 1in;
+            position: relative;
+        }
+        
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1.5in;
+            padding-bottom: 0.5in;
+            border-bottom: 2px solid #e9ecef;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 2in;
+            height: auto;
+        }
+        
+        .contact-info {
+            text-align: right;
+            font-size: 9pt;
+            color: #6c757d;
+            line-height: 1.6;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+        }
+        
+        .contact-info p {
+            margin-bottom: 0.05in;
+        }
+        
+        .content-area {
+            min-height: 6in;
+            font-size: 11pt;
+            line-height: 1.6;
+            color: #1a1a2e;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 0.5in;
+            left: 1in;
+            right: 1in;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-top: 0.5in;
+            border-top: 1px solid #e9ecef;
+            font-size: 8pt;
+            color: #6c757d;
+        }
+        
+        .footer-logo {
+            width: 0.75in;
+            height: auto;
+            opacity: 0.5;
+        }
+        
+        .footer-text {
+            text-align: right;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="logo-section">
+            <img src="../01-logos/primary/level-play-digital-logo-gradient-full.svg" alt="Level Play Digital Logo" class="logo">
+        </div>
+        
+        <div class="contact-info">
+            <p><strong>Level Play Digital</strong></p>
+            <p>123 Business Street</p>
+            <p>City, State 12345</p>
+            <p>Phone: (555) 123-4567</p>
+            <p>Email: info@levelplaydigital.com</p>
+            <p>Website: levelplaydigital.com</p>
+        </div>
+    </div>
+    
+    <div class="content-area">
+        <!-- Letter content goes here -->
+        <p style="margin-bottom: 0.5in;">
+            <strong>[Date]</strong>
+        </p>
+        
+        <p style="margin-bottom: 0.25in;">
+            <strong>[Recipient Name]</strong><br>
+            [Recipient Title]<br>
+            [Company Name]<br>
+            [Address]
+        </p>
+        
+        <p style="margin-bottom: 0.5in;">
+            Dear [Recipient Name],
+        </p>
+        
+        <p style="margin-bottom: 0.5in;">
+            [Letter content goes here. This is a template for creating professional letters with the Level Play Digital letterhead.]
+        </p>
+        
+        <p style="margin-bottom: 0.5in;">
+            [Additional paragraphs as needed.]
+        </p>
+        
+        <p style="margin-top: 0.5in;">
+            Sincerely,<br><br>
+            [Your Name]<br>
+            [Your Title]<br>
+            Level Play Digital
+        </p>
+    </div>
+    
+    <div class="footer">
+        <img src="../01-logos/primary/level-play-digital-logo-gradient-full.svg" alt="Level Play Digital Logo" class="footer-logo">
+        <div class="footer-text">
+            <p>Level Play Digital | levelplaydigital.com</p>
+            <p>&copy; 2024 Level Play Digital. All rights reserved.</p>
+        </div>
+    </div>
+    
+    <!-- Instructions for PDF conversion -->
+    <!-- 
+    To convert this HTML to PDF:
+    
+    1. Open in browser (Chrome recommended)
+    2. Press Cmd+P (Mac) or Ctrl+P (Windows)
+    3. Select "Save as PDF"
+    4. Set paper size to "Letter" (8.5" x 11")
+    5. Set margins to "Default" or "Minimum"
+    6. Uncheck "Headers and footers"
+    7. Set scale to 100%
+    8. Click "Save"
+    
+    Alternative: Use a tool like Puppeteer or Playwright:
+    node convert-to-pdf.js letterhead-template.html
+    
+    For professional printing:
+    - Convert to CMYK color space
+    - Embed fonts
+    - Save as PDF/X-1a format
+    - Ensure high resolution (300 DPI)
+    -->
+</body>
+</html>
+

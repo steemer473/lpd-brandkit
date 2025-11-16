@@ -1,0 +1,22 @@
+{
+  "name": "Level Play Digital",
+  "short_name": "Level Play",
+  "icons": [
+    {
+      "src": "/level-play-digital-favicon-192x192-android-chrome.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/level-play-digital-favicon-512x512-android-chrome.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "theme_color": "#00BFFF",
+  "background_color": "#1a1a2e",
+  "display": "standalone"
+}
+

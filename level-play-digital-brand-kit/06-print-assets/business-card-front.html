@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Business Card - Front - Level Play Digital</title>
+    <style>
+        @page {
+            size: 3.5in 2in;
+            margin: 0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 3.5in;
+            height: 2in;
+            background: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            padding: 0.25in;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-container {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        .logo-section {
+            display: flex;
+            align-items: center;
+            margin-bottom: 0.15in;
+        }
+        
+        .logo {
+            width: 1.2in;
+            height: auto;
+        }
+        
+        .company-name {
+            font-size: 14pt;
+            font-weight: 700;
+            color: #1a1a2e;
+            margin-left: 0.1in;
+        }
+        
+        .contact-info {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .name {
+            font-size: 16pt;
+            font-weight: 600;
+            color: #1a1a2e;
+            margin-bottom: 0.05in;
+        }
+        
+        .title {
+            font-size: 10pt;
+            color: #00BFFF;
+            margin-bottom: 0.1in;
+        }
+        
+        .contact-details {
+            font-size: 9pt;
+            color: #6c757d;
+            line-height: 1.4;
+        }
+        
+        .contact-details p {
+            margin-bottom: 0.03in;
+        }
+        
+        .email {
+            color: #00BFFF;
+        }
+        
+        .website {
+            color: #FF6633;
+        }
+        
+        /* Print styles */
+        @media print {
+            body {
+                print-color-adjust: exact;
+                -webkit-print-color-adjust: exact;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-container">
+        <div class="logo-section">
+            <img src="../01-logos/primary/level-play-digital-logo-gradient-full.svg" alt="Level Play Digital Logo" class="logo">
+        </div>
+        
+        <div class="contact-info">
+            <div class="name">[Your Name]</div>
+            <div class="title">[Your Title]</div>
+            <div class="contact-details">
+                <p>📧 <span class="email">your.email@levelplaydigital.com</span></p>
+                <p>📱 +1 (555) 123-4567</p>
+                <p>🌐 <span class="website">levelplaydigital.com</span></p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Instructions for PDF conversion -->
+    <!-- 
+    To convert this HTML to PDF:
+    
+    1. Open in browser (Chrome recommended)
+    2. Press Cmd+P (Mac) or Ctrl+P (Windows)
+    3. Select "Save as PDF"
+    4. Set paper size to "Custom" 3.5" x 2"
+    5. Set margins to "None"
+    6. Uncheck "Headers and footers"
+    7. Set scale to 100%
+    8. Click "Save"
+    
+    Alternative: Use a tool like Puppeteer or Playwright:
+    node convert-to-pdf.js business-card-front.html
+    
+    For professional printing:
+    - Add 0.125" bleed on all sides
+    - Include crop marks
+    - Convert to CMYK color space
+    - Embed fonts
+    - Save as PDF/X-1a format
+    -->
+</body>
+</html>
+

@@ -1,0 +1,229 @@
+/**
+ * Level Play Digital Brand CSS Variables
+ * 
+ * Complete brand system variables for use across all web projects
+ * Import this file to access all brand variables
+ */
+
+@import url('../03-colors/brand-colors.css');
+@import url('../04-typography/type-scale.css');
+
+:root {
+  /* Brand Identity */
+  --brand-name: "Level Play Digital";
+  --brand-short-name: "Level Play";
+  
+  /* Spacing System (8px base unit) */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  --spacing-3xl: 64px;
+  --spacing-4xl: 96px;
+  
+  /* Border Radius */
+  --border-radius-sm: 4px;
+  --border-radius-md: 8px;
+  --border-radius-lg: 12px;
+  --border-radius-xl: 16px;
+  --border-radius-2xl: 24px;
+  --border-radius-full: 9999px;
+  
+  /* Shadows */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.1);
+  --shadow-md: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 10px 15px rgba(0, 0, 0, 0.1);
+  --shadow-xl: 0 20px 25px rgba(0, 0, 0, 0.15);
+  --shadow-2xl: 0 25px 50px rgba(0, 0, 0, 0.25);
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 300ms ease-in-out;
+  --transition-slow: 500ms ease-in-out;
+  --transition-slower: 750ms ease-in-out;
+  
+  /* Z-Index Scale */
+  --z-index-dropdown: 1000;
+  --z-index-sticky: 1020;
+  --z-index-fixed: 1030;
+  --z-index-modal-backdrop: 1040;
+  --z-index-modal: 1050;
+  --z-index-popover: 1060;
+  --z-index-tooltip: 1070;
+  
+  /* Breakpoints */
+  --breakpoint-xs: 0;
+  --breakpoint-sm: 576px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  
+  /* Container Max Widths */
+  --container-sm: 540px;
+  --container-md: 720px;
+  --container-lg: 960px;
+  --container-xl: 1140px;
+  --container-2xl: 1320px;
+  
+  /* Grid System */
+  --grid-columns: 12;
+  --grid-gap: var(--spacing-md);
+  
+  /* Button Styles */
+  --button-padding-y: 0.75rem;
+  --button-padding-x: 1.5rem;
+  --button-font-size: var(--font-size-base);
+  --button-font-weight: var(--font-weight-semibold);
+  --button-border-radius: var(--border-radius-md);
+  --button-transition: var(--transition-base);
+  
+  /* Input Styles */
+  --input-padding-y: 0.75rem;
+  --input-padding-x: 1rem;
+  --input-font-size: var(--font-size-base);
+  --input-border-radius: var(--border-radius-md);
+  --input-border-color: var(--color-light-gray);
+  --input-border-width: 1px;
+  --input-focus-border-color: var(--color-primary-blue);
+  --input-focus-shadow: 0 0 0 3px rgba(0, 191, 255, 0.1);
+  
+  /* Card Styles */
+  --card-padding: var(--spacing-lg);
+  --card-border-radius: var(--border-radius-lg);
+  --card-background: #ffffff;
+  --card-shadow: var(--shadow-md);
+  --card-border: 1px solid var(--color-light-gray);
+  
+  /* Navigation */
+  --nav-height: 64px;
+  --nav-background: #ffffff;
+  --nav-shadow: var(--shadow-sm);
+  --nav-link-padding: var(--spacing-md);
+  --nav-link-color: var(--color-dark);
+  --nav-link-hover-color: var(--color-primary-blue);
+  
+  /* Footer */
+  --footer-background: var(--color-dark);
+  --footer-text-color: #ffffff;
+  --footer-link-color: var(--color-light-gray);
+  --footer-link-hover-color: var(--color-primary-blue);
+}
+
+/* Utility Classes */
+.container {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: var(--container-sm);
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: var(--container-md);
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: var(--container-lg);
+  }
+}
+
+@media (min-width: 1280px) {
+  .container {
+    max-width: var(--container-xl);
+  }
+}
+
+@media (min-width: 1536px) {
+  .container {
+    max-width: var(--container-2xl);
+  }
+}
+
+/* Button Base Styles */
+.btn {
+  display: inline-block;
+  padding: var(--button-padding-y) var(--button-padding-x);
+  font-size: var(--button-font-size);
+  font-weight: var(--button-font-weight);
+  line-height: 1.5;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+  border-radius: var(--button-border-radius);
+  cursor: pointer;
+  transition: all var(--button-transition);
+}
+
+.btn-primary {
+  background: var(--gradient-primary);
+  color: #ffffff;
+}
+
+.btn-primary:hover {
+  opacity: 0.9;
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
+}
+
+.btn-secondary {
+  background-color: var(--color-primary-blue);
+  color: #ffffff;
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary-orange);
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--color-primary-blue);
+  color: var(--color-primary-blue);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-primary-blue);
+  color: #ffffff;
+}
+
+/* Card Styles */
+.card {
+  background: var(--card-background);
+  border-radius: var(--card-border-radius);
+  box-shadow: var(--card-shadow);
+  border: var(--card-border);
+  padding: var(--card-padding);
+}
+
+/* Input Styles */
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--input-padding-y) var(--input-padding-x);
+  font-size: var(--input-font-size);
+  line-height: 1.5;
+  color: var(--color-dark);
+  background-color: #ffffff;
+  border: var(--input-border-width) solid var(--input-border-color);
+  border-radius: var(--input-border-radius);
+  transition: border-color var(--transition-base), box-shadow var(--transition-base);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--input-focus-border-color);
+  box-shadow: var(--input-focus-shadow);
+}
+

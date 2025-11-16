@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level Play Digital - Logo Background Previews</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            padding: 40px 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            font-size: 2.5em;
+            margin-bottom: 40px;
+            color: #1a1a2e;
+        }
+        
+        .preview-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .preview-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .preview-title {
+            font-size: 1.5em;
+            color: #1a1a2e;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        
+        .preview-container {
+            width: 100%;
+            height: 400px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 8px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .preview-container.dark-bg {
+            background: #1a1a2e;
+        }
+        
+        .preview-container.light-bg {
+            background: #ffffff;
+            border: 2px solid #e9ecef;
+        }
+        
+        .preview-container.transparent-bg {
+            background-image: 
+                linear-gradient(45deg, #e9ecef 25%, transparent 25%),
+                linear-gradient(-45deg, #e9ecef 25%, transparent 25%),
+                linear-gradient(45deg, transparent 75%, #e9ecef 75%),
+                linear-gradient(-45deg, transparent 75%, #e9ecef 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+        }
+        
+        .preview-container svg,
+        .preview-container img {
+            max-width: 90%;
+            max-height: 90%;
+            height: auto;
+        }
+        
+        .instructions {
+            background: #e9ecef;
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 40px;
+        }
+        
+        .instructions h2 {
+            color: #1a1a2e;
+            margin-bottom: 15px;
+        }
+        
+        .instructions ol {
+            margin-left: 20px;
+            line-height: 1.8;
+        }
+        
+        .instructions code {
+            background: #1a1a2e;
+            color: #00BFFF;
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-family: 'Courier New', monospace;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Level Play Digital - Logo Background Previews</h1>
+        
+        <div class="preview-grid">
+            <!-- Dark Background -->
+            <div class="preview-card">
+                <h3 class="preview-title">Logo on Dark Background</h3>
+                <div class="preview-container dark-bg">
+                    <img src="../primary/level-play-digital-logo-gradient-full.svg" alt="Logo on Dark Background" style="width: 100%; height: auto;">
+                </div>
+                <p style="margin-top: 15px; color: #6c757d;">
+                    <strong>Background:</strong> #1a1a2e (Dark)<br>
+                    <strong>Use case:</strong> Dark mode interfaces, dark website sections<br>
+                    <strong>File:</strong> level-play-digital-logo-on-dark-bg.png
+                </p>
+            </div>
+            
+            <!-- Light Background -->
+            <div class="preview-card">
+                <h3 class="preview-title">Logo on Light Background</h3>
+                <div class="preview-container light-bg">
+                    <img src="../primary/level-play-digital-logo-gradient-full.svg" alt="Logo on Light Background" style="width: 100%; height: auto;">
+                </div>
+                <p style="margin-top: 15px; color: #6c757d;">
+                    <strong>Background:</strong> #ffffff (White)<br>
+                    <strong>Use case:</strong> Light backgrounds, print materials<br>
+                    <strong>File:</strong> level-play-digital-logo-on-light-bg.png
+                </p>
+            </div>
+            
+            <!-- Transparent Background -->
+            <div class="preview-card">
+                <h3 class="preview-title">Logo with Transparent Background</h3>
+                <div class="preview-container transparent-bg">
+                    <img src="../primary/level-play-digital-logo-gradient-full.svg" alt="Logo Transparent Background" style="width: 100%; height: auto;">
+                </div>
+                <p style="margin-top: 15px; color: #6c757d;">
+                    <strong>Background:</strong> Transparent (checkerboard shows transparency)<br>
+                    <strong>Use case:</strong> Overlays, flexible backgrounds<br>
+                    <strong>File:</strong> level-play-digital-logo-transparent-bg.png
+                </p>
+            </div>
+        </div>
+        
+        <div class="instructions">
+            <h2>How to Generate PNG Files</h2>
+            <p style="margin-bottom: 15px;">To generate the PNG files from these previews, you can use one of the following methods:</p>
+            
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Method 1: Browser Screenshot</h3>
+            <ol>
+                <li>Open this HTML file in a browser</li>
+                <li>Right-click on each preview container</li>
+                <li>Select "Inspect Element" or use browser DevTools</li>
+                <li>Take a screenshot of each preview container</li>
+                <li>Save as PNG files with the specified names</li>
+            </ol>
+            
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Method 2: Using ImageMagick (Command Line)</h3>
+            <ol>
+                <li>Install ImageMagick: <code>brew install imagemagick</code> (Mac) or download from imagemagick.org</li>
+                <li>Convert SVG to PNG with background:
+                    <pre style="background: #1a1a2e; color: #00BFFF; padding: 15px; border-radius: 4px; margin-top: 10px; overflow-x: auto;">
+# Dark background
+convert -background "#1a1a2e" -resize 1200x ../primary/level-play-digital-logo-gradient-full.svg level-play-digital-logo-on-dark-bg.png
+
+# Light background  
+convert -background "#ffffff" -resize 1200x ../primary/level-play-digital-logo-gradient-full.svg level-play-digital-logo-on-light-bg.png
+
+# Transparent background
+convert -background none -resize 1200x ../primary/level-play-digital-logo-gradient-full.svg level-play-digital-logo-transparent-bg.png</pre>
+                </li>
+            </ol>
+            
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Method 3: Using Inkscape (GUI)</h3>
+            <ol>
+                <li>Open the SVG file in Inkscape</li>
+                <li>File → Document Properties → Set background color (or leave transparent)</li>
+                <li>File → Export PNG Image</li>
+                <li>Set width to 1200px, export</li>
+                <li>Repeat for each background variation</li>
+            </ol>
+            
+            <h3 style="margin-top: 20px; margin-bottom: 10px;">Method 4: Using Node.js (sharp library)</h3>
+            <p style="margin-bottom: 10px;">Create a script to generate all PNG files programmatically. See <code>generate-background-pngs.js</code> for an example script.</p>
+        </div>
+    </div>
+</body>
+</html>
+
