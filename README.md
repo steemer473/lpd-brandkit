@@ -11,6 +11,9 @@ Complete logo system including:
 - **Animated**: Gradient shift, fade-in, glow pulse, brand colors shift animations
 - **Variations**: Horizontal, icon-only, compact versions (horizontal, stacked, icon, wordmark)
 - **Backgrounds**: Context examples on different backgrounds
+- **PNG Versions**: Pre-generated PNG files in multiple sizes (256px, 512px, 1200px, 2400px) for all primary and solid-version logos
+- **Generation Scripts**: Automated scripts for converting SVGs to PNGs, PDFs, and generating icon-only versions
+- **Recommended Logos Zip**: Curated collection of logos organized by use case (print, email, SMS) - see `lpd-logos-recommended.zip`
 
 ### 02-favicons/
 Complete favicon package:
@@ -125,12 +128,41 @@ Maintain clear space equal to the height of the "L" in "LEVEL" on all sides of t
 
 ### Using Logo Files
 
+#### SVG Format (Recommended for Web)
 ```html
 <!-- SVG Logo (Recommended) -->
 <img src="level-play-digital-brand-kit/01-logos/primary/level-play-digital-logo-gradient-full.svg" 
      alt="Level Play Digital" 
      width="300">
 ```
+
+#### PNG Format (For Email, SMS, or When SVG Not Supported)
+```html
+<!-- PNG Logo - Web Use (512px) -->
+<img src="level-play-digital-brand-kit/01-logos/png/level-play-digital-logo-gradient-full-512px.png" 
+     alt="Level Play Digital" 
+     width="300">
+
+<!-- PNG Logo - Email Newsletter (512px) -->
+<img src="level-play-digital-brand-kit/01-logos/png/level-play-digital-logo-white-512px.png" 
+     alt="Level Play Digital" 
+     width="200">
+
+<!-- PNG Logo - SMS/Icon (256px) -->
+<img src="level-play-digital-brand-kit/01-logos/png/level-play-digital-logo-icon-only-256px.png" 
+     alt="LPD" 
+     width="64">
+```
+
+### Recommended Logos Zip File
+
+For quick access to logos organized by use case, download **`lpd-logos-recommended.zip`** which includes:
+
+- **Print**: PDF, SVG, and PNG (2400px) versions with CMYK conversion instructions
+- **Email**: Optimized PNG files (512px) with email implementation guidelines
+- **SMS**: Small PNG files (256px) including icon-only and full logo versions
+
+Each folder includes detailed instruction files for proper usage.
 
 ### Using Color Variables
 
@@ -163,6 +195,48 @@ Maintain clear space equal to the height of the "L" in "LEVEL" on all sides of t
 <link rel="manifest" href="level-play-digital-brand-kit/02-favicons/site.webmanifest">
 ```
 
+## 📦 Logo File Formats
+
+### Available Formats
+
+**SVG (Vector)**
+- Location: `01-logos/primary/`, `01-logos/solid-versions/`, `01-logos/variations/`
+- Best for: Websites, scalable applications, design software
+- Advantages: Scalable, small file size, editable
+
+**PNG (Raster)**
+- Location: `01-logos/png/`
+- Available sizes: 256px, 512px, 1200px, 2400px
+- Best for: Email newsletters, SMS, social media, when SVG not supported
+- Advantages: Universal compatibility, transparency support
+
+**PDF (Print)**
+- Generated on-demand using `01-logos/scripts/generate-pdf-logos.js`
+- Best for: Professional printing, business cards, letterhead
+- Advantages: Print-ready, embedded fonts, CMYK compatible
+
+### Generating Additional Formats
+
+#### Generate PNG Files
+```bash
+# Generate all PNG sizes for primary and solid-version logos
+node level-play-digital-brand-kit/01-logos/scripts/generate-png-logos.js
+```
+
+#### Generate PDF Files
+```bash
+# Generate PDF versions for print (requires puppeteer)
+node level-play-digital-brand-kit/01-logos/scripts/generate-pdf-logos.js
+```
+
+#### Generate Icon-Only PNGs
+```bash
+# Generate icon-only PNGs for SMS/avatars
+node level-play-digital-brand-kit/01-logos/scripts/generate-icon-pngs.js
+```
+
+**Requirements**: Node.js and npm packages (`sharp` for PNG, `puppeteer` for PDF)
+
 ## 📋 Brand Guidelines
 
 ### Do's
@@ -193,12 +267,18 @@ Interactive showcase pages are available to preview all brand assets:
 - **coming-soon-social.html** - Coming soon page template
 - **coming-soon-animated-glass.html** - Animated coming soon page
 
-## 📦 Repository
+## 📦 Repository & Downloads
 
 This brand kit is hosted on GitHub:
 - **Repository**: [github.com/steemer473/lpd-brandkit](https://github.com/steemer473/lpd-brandkit)
 - **Status**: Private repository
 - **Latest Version**: 1.0
+
+### Quick Downloads
+
+- **Recommended Logos Zip**: `lpd-logos-recommended.zip` - Curated logos organized by use case (print, email, SMS)
+- **All PNG Logos**: Available in `level-play-digital-brand-kit/01-logos/png/` directory
+- **Generation Scripts**: Available in `level-play-digital-brand-kit/01-logos/scripts/` directory
 
 ## 📞 Support
 
@@ -213,4 +293,21 @@ All brand assets are proprietary to Level Play Digital. Usage is restricted to a
 **Version**: 1.0  
 **Last Updated**: 2025-01-15  
 **Brand**: Level Play Digital
+
+## 🆕 Recent Updates
+
+### Logo Format Additions (2025-01-15)
+- ✅ Added PNG versions of all primary and solid-version logos (256px, 512px, 1200px, 2400px)
+- ✅ Created automated generation scripts for PNG, PDF, and icon-only formats
+- ✅ Added `lpd-logos-recommended.zip` with curated logos organized by use case
+- ✅ Included comprehensive instruction files for print, email, and SMS usage
+- ✅ Added PDF generation capability for print-ready logos
+- ✅ Created icon-only PNG versions optimized for SMS and small spaces
+
+### New Files & Directories
+- `01-logos/png/` - 32 pre-generated PNG logo files in multiple sizes
+- `01-logos/scripts/generate-png-logos.js` - Script to generate PNG files from SVGs
+- `01-logos/scripts/generate-pdf-logos.js` - Script to generate PDF files for print
+- `01-logos/scripts/generate-icon-pngs.js` - Script to generate icon-only PNGs
+- `lpd-logos-recommended.zip` - Curated logo collection with instructions
 
