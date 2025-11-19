@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "puppeteer": "^24.30.0",
+    "sharp": "^0.34.5"
+  }
+}
